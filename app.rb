@@ -10,4 +10,8 @@ class RedmartApp < Sinatra::Base
   erb :'users'
 end
 
+get '/aboutus' do
+  erb 'ABOUT US'
+end
+
 end
