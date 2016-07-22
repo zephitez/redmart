@@ -1,6 +1,16 @@
 require './models/user'
+require 'Faker'
 
+# (0..10).each do |i|
+#     User.create(name: "User #{i}", email: "something", address: "something", password: "password")
+# end
 
 (0..10).each do |i|
-  User.create(name: "User #{i}", email: "User #{i}", address: "User #{i}", password: "User #{i}", cc_number: "#{i}")
+  User.create(
+  name: Faker::Name.name,
+  email: Faker::Internet.email,
+  address: Faker::Address.street_address,
+  password: Faker::Name.name,
+  cc_number: Faker::PhoneNumber.phone_number
+  )
 end
