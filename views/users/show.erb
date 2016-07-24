@@ -1,0 +1,10 @@
+<h2>Each User Page</h2>
+
+<h3>This user is <%= @user[:name] %></h3>
+
+<h4>The ID of this user is <%= @user[:id] %></h4>
+
+<form action="/users/<%= user[:id] %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="delete">
+</form>

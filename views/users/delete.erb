@@ -1,0 +1,9 @@
+<h3>This user to be deleted is <%= @user[:name] %></h3>
+
+<h4>The ID of this user to be deleted is <%= @user[:id] %></h4>
+
+
+<form action="/users/<%= @user[:id] %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="delete">
+</form>

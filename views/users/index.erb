@@ -1,7 +1,37 @@
-<ul>
-  <% @users.each do |user| %>
-  <li>
-    <%= user[:'name'] %>
-  </li>
-  <% end %>
-</ul>
+<h2>Users from Redmart DB</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user[:id] %>
+      </td>
+      <td>
+        <%= user[:name] %>
+      </td>
+      <td>
+        <%= user[:email] %>
+      </td>
+      <td>
+        <%= user[:address] %>
+      </td>
+      <td>
+          <a href="/users/<%=user[:id]%>">Display</a>
+          <a href="/users/<%=user[:id]%>/edit">Edit</a>
+          <a href="/users/<%=user[:id]%>/delete">Delete</a>
+
+
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

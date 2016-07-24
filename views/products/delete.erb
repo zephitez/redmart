@@ -1,0 +1,9 @@
+<h3>This product to be deleted is <%= @product[:name] %></h3>
+
+<h4>The ID of this product to be deleted is <%= @product[:id] %></h4>
+
+
+<form action="/products/<%= @product[:id] %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="delete">
+</form>
